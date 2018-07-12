@@ -19,4 +19,9 @@ posix
 Instructions  
 php ws_server.php start  
 php ws_server.php stop  
-php ws_server.php restart  
+php ws_server.php restart     
+
+
+nginx as a WebSocket Proxy    
+https://www.nginx.com/blog/websocket-nginx/
+
