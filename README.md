@@ -23,5 +23,5 @@ php ws_server.php restart
 
 
 nginx as a WebSocket Proxy    
-https://www.nginx.com/blog/websocket-nginx/
+https://www.nginx.com/blog/websocket-nginx
 
