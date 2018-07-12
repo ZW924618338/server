@@ -6,13 +6,13 @@ Support timer
 Support for multiple server deployments    
 
 Operating environment  
-linux
+linux  
 php5.3 and above and cli environment. the php7 is best  
 
 
 PHP extension  
 event 
-pcntl
+pcntl  
 posix    
 
 Instructions  
