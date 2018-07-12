@@ -11,9 +11,9 @@ php5.3 and above and cli environment. the php7 is best
 
 
 PHP extension  
-event 
+event   
 pcntl  
-posix    
+posix     
 
 Instructions  
 php ws_server.php start  
