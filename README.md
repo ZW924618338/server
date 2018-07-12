@@ -22,6 +22,6 @@ php ws_server.php stop
 php ws_server.php restart        
 
 
-nginx as a WebSocket Proxy    
+Nginx as a WebSocket Proxy    
 https://www.nginx.com/blog/websocket-nginx
 
