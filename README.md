@@ -1,6 +1,7 @@
 # server
 A php websocket server based on php event extension  
 
+asynchronous  
 Support for multiple processes  
 Support timer  
 Support for multiple server deployments    
