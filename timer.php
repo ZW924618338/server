@@ -4,6 +4,7 @@ class timer
 {
     static $timer;
     static $eventBase;
+    static $tid = 0;
 
     public static function init($eventBase)
     {
@@ -13,14 +14,18 @@ class timer
 
     public static function addTimer($second,$func)
     {
-       self::$timer = new Event(self::$eventBase, -1, Event::TIMEOUT|Event::PERSIST, $func);
-       self::$timer->data = self::$timer ;
-       self::$timer->addTimer($second);
+       self::$tid++;
+       self::$timer[self::$tid] = new Event(self::$eventBase, -1, Event::TIMEOUT|Event::PERSIST, $func);
+       self::$timer[self::$tid]->data = self::$tid;
+       self::$timer[self::$tid]->addTimer($second);
+       return self::$tid;
     }
 
-    public static function delTimer()
+    public static function delTimer($tid)
     {
-       self::$timer->delTimer();
+       if((int)$tid<=0) return false;
+       return self::$timer[$tid]->delTimer();
     }
+
 
 }
