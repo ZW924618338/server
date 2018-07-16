@@ -21,6 +21,16 @@ $server->onWorkerStart = function ($worker) { //$worker=$server
     //         $connection->send('当前进程id: '.$worker->workerId);
     //      }
     // });
+    
+    // timer::addTimer(2, function($fd,$what,$tid)use($worker){
+    //      var_dump('timer id......'.$tid);
+    //      timer::delTimer($tid);
+    // });
+
+    // $tid=timer::addTimer(2.5, function()use($worker,&$tid){
+    //     var_dump('timer id......'.$tid);
+    //     timer::delTimer($tid);
+    // });
 };
 
 $server->onConnect = function ($connection) {
