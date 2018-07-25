@@ -55,10 +55,10 @@ class connection
     //解码数据
     public function unmask($text)
     {
-        $length = ord(substr($text, 1, 1)) & 0x7F;
-        $opcode = ord(substr($text, 0, 1)) & 0x0F;
-        //$opcode=8说明浏览器刷新、关闭或客户端主动关闭
-        $isMask = (ord(substr($text, 1, 1)) & 0x80) >> 7;
+        $length = ord(substr($text, 1, 1)) & 127;
+        $opcode = ord(substr($text, 0, 1)) & 15; 
+        //$opcode=8说明浏览器刷新或关闭
+        $isMask = ord(substr($text, 1, 1)) >> 7;
         if ($opcode == 8 || $isMask != 1) return 0;
         if ($length == 126) {
             $masks = substr($text, 4, 4);
