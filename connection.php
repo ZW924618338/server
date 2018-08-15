@@ -52,12 +52,11 @@ class connection
         $this->bufferEvent->write($data);
     }
 
-    //解码数据
     public function unmask($text)
     {
         $length = ord(substr($text, 1, 1)) & 127;
         $opcode = ord(substr($text, 0, 1)) & 15; 
-        //$opcode=8说明浏览器刷新或关闭
+        //$opcode=8 browser refresh or close
         $isMask = ord(substr($text, 1, 1)) >> 7;
         if ($opcode == 8 || $isMask != 1) return 0;
         if ($length == 126) {
@@ -77,7 +76,6 @@ class connection
         return $text;
     }
 
-    //编码数据
     public function mask($text)
     {
         $b1 = 0x80 | (0x1 & 0x0f);
