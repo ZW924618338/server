@@ -26,7 +26,7 @@ class channel
         $bufferEvent->enable(Event::READ | Event::PERSIST);
         $this->connections[self::$fd] = $clientSocket;
         $this->buffers[self::$fd] = $bufferEvent;
-        echo "客户端".self::$fd."连接\n";
+        echo "client".self::$fd."connection\n";
     }
 
     public function read($bufferEvent, $fd)
@@ -43,7 +43,7 @@ class channel
     {
         $bufferEvent->disable(Event::READ | Event::WRITE);
         $bufferEvent->free();
-        echo "客户端".$fd."关闭\n";
+        echo "client".$fd."close\n";
         unset($this->connections[$fd], $this->buffers[$fd]);
     }
 
@@ -114,4 +114,4 @@ class channel
 }
 
 
-$channel = new channel('0.0.0.0', '9051');//实际要改为监听内网ip
+$channel = new channel('0.0.0.0', '9051');//Intranet IP
