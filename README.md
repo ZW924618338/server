@@ -1,5 +1,5 @@
 # server
-==
+
 A php websocket server based on php event extension  
 =
 
@@ -14,7 +14,7 @@ linux
 php5.3 and above and cli environment. the php7 is best  
 
 
-PHP extension  
+php extension  
 =
 event   
 pcntl  
