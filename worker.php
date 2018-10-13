@@ -304,8 +304,8 @@ class worker
         $upgrade = "HTTP/1.1 101 Web Socket Protocol Handshake\r\n" .
             "Upgrade: websocket\r\n" .
             "Connection: Upgrade\r\n" .
-            "Sec-WebSocket-Origin: $host\r\n" .
-            "Sec-WebSocket-Location: ws://$host:$port\r\n" .
+            "Sec-WebSocket-Origin: {$headers['Host']}\r\n" .
+            "Sec-WebSocket-Location: ws://{$headers['Host']}\r\n" .
             "Sec-WebSocket-Accept:$secAccept\r\n\r\n";
         fwrite($client, $upgrade, strlen($upgrade));
     }
