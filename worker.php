@@ -81,6 +81,7 @@ class worker
     public function accept($serverSocket, $flag, $eventBase)
     {
         $clientSocket = stream_socket_accept($serverSocket);
+        if($clientSocket == false) return;
         $header = fread($clientSocket, 1024);
         $this->performHandshake($header, $clientSocket, $this->host, $this->port);
         $connection = new connection($clientSocket, $eventBase);
